@@ -1,6 +1,5 @@
 class FormaGeometrica{
-
-    #base
+    #base // # = privar -> encapsulou -> só acessa com get ou set
     #altura
     #tipo
 
@@ -11,7 +10,7 @@ class FormaGeometrica{
     // }
 
     get base(){
-        return this.#base
+        return this.#base // -> this substitui qualquer objeto lá fora
     }
     get altura(){
         return this.#altura
