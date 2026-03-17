@@ -1,3 +1,14 @@
+/*
+    ESTRUTURA DE DADOS PILHA
+
+    - Pilha é uma lista linear de acesso restrito, que permite apenas as operações
+      de inserção (push) e retirada (pop), ambas ocorrendo no final da estrutura.
+    - Como consequência, a pilha funciona pelo princípio LIFO (Last In, First Out -
+      último a entrar, primeiro a sair).
+    - A principal aplicação das pilhas são tarefas que envolvem a inversão de uma
+      sequência de dados.
+*/
+
 export default class Stack {
     #data // vetor privado
 
@@ -25,12 +36,7 @@ export default class Stack {
     }
     
     print(){
-        return JSON.stringify([...this.#data].reverse())
+        return JSON.stringify(this.#data)
     }
 
 }
-
-// Assim o valor vai embora -> precisa do return para ter retorno
-// pop() { // Não precisa passar valor/ parâmetro
-//      this.#data.pop() // Pop remove o último  
-//  }
