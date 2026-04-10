@@ -1,21 +1,21 @@
-import DoublyLinkedList from "./lib/DoublyLinkedList.mjs";
+import DoublyLinkedList from "./lib/DoublyLinkedList.mjs"
 
 const lista = new DoublyLinkedList()
 
 console.log("Lista está vazia? ", lista.isEmpty ? "Está vazia" : "Não")
 console.log(lista.print())
 
-lista.insert(0, "Fiat 147")
+lista.insert("Fiat 147", 0)
 console.log("Lista está vazia? ", lista.isEmpty ? "Está vazia" : "Não")
 console.log(lista.print())
 
-lista.insert(0, "Opala")
+lista.insert("Opala", 0)
 console.log(lista.print())
 
 lista.insertTail("Chevette")
 console.log(lista.print())
 
-lista.insert(1, "Corcel")
+lista.insert("Corcel", 1)
 console.log(lista.print())
 
 let removido = lista.remove(0)
