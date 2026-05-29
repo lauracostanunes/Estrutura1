@@ -18,8 +18,10 @@ function bfs(grafo, inicio){
     //Busca instantânea: o método .has() desconbre se um elemento está lá desntro muito mais rápido do que fazer um indexOf ou includes
     const visitados = new Set();
 
+    // Cria uma nova instância da fila em LIB
     const fila = new Queue();
 
+    // Insere o nó de partida (nó inicial) no final da fila
     fila.enqueue(inicio)
 
     //criar um laço que vai rodar enquanto a fila NÃO estiver vazia 
@@ -27,10 +29,22 @@ function bfs(grafo, inicio){
         // remove o primeiro elemento da fila (o mais antigo) e guarda na variável 'no'
         const no = fila.dequeue()
 
+        // O método .has() checha se o nó atual NÃO está dentro do conjunto de visitados
         if(!visitados.has(no)){
+
+            // Imprime o nó no console
             console.log(no)
 
+            // Método de adicionar o nó atual no conjunto para marcar que ele já foi visitado/ processado
             visitados.add(no)
+
+            // Percorre cada um dos vizinhos do nó atual da lista de adjacência
+            for(const vizinho of grafo[no]){
+                // Se o vizinho não foi visitado, adiciona à fila
+                if(!visitados.has(vizinho)){
+                    fila.enqueue(vizinho)
+                }
+            }
         }
     }
 }
